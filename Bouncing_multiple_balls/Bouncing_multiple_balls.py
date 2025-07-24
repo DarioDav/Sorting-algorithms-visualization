@@ -2,8 +2,10 @@ from turtle import color
 import pygame
 import sys
 import random
+import Ball_class
 
 pygame.init()
+
 WIDTH, HEIGHT= 800,600
 
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
