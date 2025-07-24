@@ -57,6 +57,7 @@ def bubble_sort(data):
                 data[j], data[j + 1] = data[j + 1], data[j]
                 draw_bars(data, highlight_indices=[j, j + 1])
                 yield True  # Pause after each swap
+                
 
 # Main loop
 sorting = False

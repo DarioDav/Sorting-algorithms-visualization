@@ -37,7 +37,7 @@ while running:
     # Draw all saved circles
     for pos in circle_positions:
         
-        pygame.draw.circle(screen, (100,250,200), pos, 50)
+        pygame.draw.circle(screen, (100,2), pos, 50)
 
     pygame.display.update()
     clock.tick(60)
