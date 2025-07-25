@@ -1,24 +1,4 @@
 import pygame
-import sys
-
-import pygame
-
-# Initialize Pygame
-pygame.init()
-
-# Screen dimensions
-SCREEN_WIDTH = 800
-SCREEN_HEIGHT = 600
-screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
-pygame.display.set_caption("Pygame Button Example")
-
-# Colors
-WHITE = (255, 255, 255)
-BLACK = (0, 0, 0)
-GRAY = (200, 200, 200)
-DARK_GRAY = (100, 100, 100)
-BLUE = (0, 128, 255)
-LIGHT_BLUE = (100, 180, 255)
 
 class Button:
     """
@@ -38,7 +18,7 @@ class Button:
         rect (pygame.Rect): The Pygame Rect object representing the button's clickable area.
     """
 
-    def __init__(self, text, x, y, width, height, color, hover_color, text_color=BLACK, font_size=30):
+    def __init__(self, text, x, y, width, height, color, hover_color, text_color="Black", font_size=30):
         """
         Initializes a new Button object.
 
@@ -102,49 +82,3 @@ class Button:
                 if self.rect.collidepoint(event.pos):
                     return True
         return False
-
-# --- Example Usage ---
-def main():
-    running = True
-    clock = pygame.time.Clock()
-
-    # Create buttons
-    button1 = Button("Start Simulation", 50, 50, 200, 60, BLUE, LIGHT_BLUE, WHITE)
-    button2 = Button("Reset", 50, 130, 200, 60, GRAY, DARK_GRAY, BLACK)
-    button3 = Button("Exit", 50, 210, 200, 60, (200, 50, 50), (255, 100, 100), WHITE)
-
-    while running:
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                running = False
-
-            # Check for button clicks
-            if button1.is_clicked(event):
-                print("Start Simulation button clicked!")
-                # Add your simulation start logic here
-            if button2.is_clicked(event):
-                print("Reset button clicked!")
-                # Add your reset logic here
-            if button3.is_clicked(event):
-                print("Exit button clicked!")
-                running = False # Exit the game when Exit button is clicked
-
-        # Fill the background
-        screen.fill(WHITE)
-
-        # Draw all buttons
-        button1.draw(screen)
-        button2.draw(screen)
-        button3.draw(screen)
-
-        # Update the display
-        pygame.display.flip()
-
-        # Cap the frame rate
-        clock.tick(60)
-
-    pygame.quit()
-
-if __name__ == "__main__":
-    main()
-
