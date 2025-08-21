@@ -48,6 +48,9 @@ while running:
     clock.tick(60)
     draw_bars(values, colors)
 
+    sort_button.draw(screen)
+    reset_button.draw(screen)
+    
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
@@ -56,8 +59,8 @@ while running:
                 next(sort_generator)
             except StopIteration:
                 pass  # Sorting is done
-    sort_button.draw(screen)
-    reset_button.draw(screen)
+            
+    
 
 pygame.quit()
 sys.exit()

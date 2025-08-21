@@ -37,6 +37,7 @@ while running:
 
         elif reset_button.is_clicked(event):
             print("Reset clicked")
+            
         elif sort_button.is_clicked(event):
             print("Sort clicked")
 
